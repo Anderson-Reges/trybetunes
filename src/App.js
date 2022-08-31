@@ -7,6 +7,7 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import Header from './components/Header';
 
 class App extends React.Component {
   render() {
@@ -14,12 +15,22 @@ class App extends React.Component {
       <BrowserRouter>
         <p>TrybeTunes</p>
         <Route exact path="/" component={ Login } />
-        <Route exact path="/search" component={ Search } />
-        <Route exact path="/album/:id" component={ Album } />
-        <Route exact path="/favorites" component={ Favorites } />
-        <Route exact path="/profile" component={ Profile } />
-        <Route exact path="/profile/edit" component={ ProfileEdit } />
-        <Route path="*" component={ NotFound } />
+        <Route path="/search" component={ Search }>
+          <Header />
+        </Route>
+        <Route path="/album/:id" component={ Album }>
+          <Header />
+        </Route>
+        <Route path="/favorites" component={ Favorites }>
+          <Header />
+        </Route>
+        <Route exact path="/profile" component={ Profile }>
+          <Header />
+        </Route>
+        <Route path="/profile/edit" component={ ProfileEdit }>
+          <Header />
+        </Route>
+        <Route exact path="*" component={ NotFound } />
       </BrowserRouter>
     );
   }

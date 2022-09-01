@@ -12,7 +12,6 @@ class Search extends React.Component {
     disabled: true,
     loading: false,
     hasRender: false,
-    search: '',
     requestUrl: '',
   };
 
@@ -42,8 +41,7 @@ class Search extends React.Component {
     const { inputSearch } = this.state;
     this.setState((prev) => ({
       loading: true,
-      prevInputSearch: [...prev.inputSearch],
-      search: inputSearch }));
+      prevInputSearch: [...prev.inputSearch] }));
     const requestUrl = await searchAlbumsAPI(inputSearch);
     this.setState({
       loading: false,

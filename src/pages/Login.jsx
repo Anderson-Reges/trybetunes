@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
+import Loading from '../components/Loading';
 
 class Login extends React.Component {
   state = {
@@ -41,11 +42,10 @@ class Login extends React.Component {
   };
 
   render() {
-    const loadingElement = <h2>Carregando...</h2>;
     const { disabled, redirect, loading } = this.state;
     return (
       <div data-testid="page-login">
-        { loading ? loadingElement : (
+        { loading ? <Loading /> : (
           <div>
             {' '}
             <h1>Login</h1>

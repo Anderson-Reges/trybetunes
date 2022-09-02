@@ -6,9 +6,8 @@ import MusicCard from '../components/MusicCard';
 
 class Album extends React.Component {
   state = {
-    musicsList: [],
     album: [],
-    track: [],
+    tracks: [],
   };
 
   async componentDidMount() {
@@ -16,38 +15,46 @@ class Album extends React.Component {
     const { id } = match.params;
     const musicsList = await getMusics(id);
     const album = musicsList.filter((_, index) => index === 0);
-    const track = musicsList.filter((_, index) => index !== 0);
-    this.setState((prev) => ({
-      musicsList: [...prev.musicsList, musicsList],
+    const tracks = musicsList.filter((_, index) => index !== 0);
+    this.setState({
       album,
-      track,
-    }));
-    console.log(track);
+      tracks,
+    });
   }
 
   render() {
-    const { album, track } = this.state;
+    const { album, tracks } = this.state;
     return (
-      <div data-testid="page-album">
-        <Header />
-        <h1>Album:</h1>
-        <div>
-          {album.map((element) => (
-            <div key={ element.id }>
-              <img src={ element.artworkUrl100 } alt={ element.artistName } />
-              <h1 data-testid="album-name">
-                {element.collectionName}
-              </h1>
-              <h2
-                data-testid="artist-name"
-              >
-                {element.artistName}
-              </h2>
-            </div>
+      <span>
+        <div data-testid="page-album">
+          <Header />
+          <h1>Album:</h1>
+          <div>
+            {album.map((element) => (
+              <div key={ element.id }>
+                <img src={ element.artworkUrl100 } alt={ element.artistName } />
+                <h1 data-testid="album-name">
+                  {element.collectionName}
+                </h1>
+                <h2
+                  data-testid="artist-name"
+                >
+                  {element.artistName}
+                </h2>
+              </div>
+            ))}
+          </div>
+          {tracks.map((e) => (
+            <MusicCard
+              key={ e.trackId }
+              trackId={ e.trackId }
+              trackName={ e.trackName }
+              previewUrl={ e.previewUrl }
+              album={ e }
+            />
           ))}
         </div>
-        <MusicCard track={ track } />
-      </div>
+      </span>
     );
   }
 }

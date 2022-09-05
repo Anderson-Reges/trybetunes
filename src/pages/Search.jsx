@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
-import '../Search.css';
+import '../Style.css';
 
 class Search extends React.Component {
   state = {
@@ -86,7 +86,6 @@ class Search extends React.Component {
 
   render() {
     const { disabled, inputSearch, loading, hasRender, requestUrl } = this.state;
-    console.log(inputSearch);
     const albums = (
       <div className="albums">
         {this.albumCard(requestUrl)}
@@ -95,22 +94,24 @@ class Search extends React.Component {
     return (loading ? <Loading /> : (
       <div data-testid="page-search">
         <Header />
-        <h3>Search</h3>
-        <input
-          type="text"
-          name="inputSearch"
-          value={ inputSearch }
-          data-testid="search-artist-input"
-          onChange={ this.handleChange }
-        />
-        <button
-          type="button"
-          disabled={ disabled }
-          onClick={ () => this.handleSearch(inputSearch) }
-          data-testid="search-artist-button"
-        >
-          Pesquisar
-        </button>
+        <div className="input-search-tags-page">
+          <h3>Search</h3>
+          <input
+            type="text"
+            name="inputSearch"
+            value={ inputSearch }
+            data-testid="search-artist-input"
+            onChange={ this.handleChange }
+          />
+          <button
+            type="button"
+            disabled={ disabled }
+            onClick={ () => this.handleSearch(inputSearch) }
+            data-testid="search-artist-button"
+          >
+            Pesquisar
+          </button>
+        </div>
         {hasRender && albums}
       </div>
     )

@@ -8,7 +8,7 @@ export default class MusicCard extends React.Component {
     checked: false,
   };
 
-  handleClick = async () => {
+  handleChange = async () => {
     const { album } = this.props;
     this.setState({
       checked: true,
@@ -22,7 +22,7 @@ export default class MusicCard extends React.Component {
   render() {
     const {
       trackId, trackName,
-      previewUrl,
+      previewUrl, check,
     } = this.props;
     const {
       checked,
@@ -39,16 +39,19 @@ export default class MusicCard extends React.Component {
             <code>audio</code>
             .
           </audio>
-          {checked && <Loading />}
+
           <label htmlFor="Favorita">
             Favorita
             <input
               type="checkbox"
               id="Favorita"
-              onClick={ this.handleClick }
+              onClick={ this.handleChange }
+              onChange={ this.handleChange }
               data-testid={ `checkbox-music-${trackId}` }
+              checked={ check }
             />
           </label>
+          {checked && <Loading />}
         </div>
       </div>
     );

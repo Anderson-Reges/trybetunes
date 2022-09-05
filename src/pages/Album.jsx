@@ -35,7 +35,6 @@ class Album extends React.Component {
 
   render() {
     const { album, tracks, favoritedList, loading } = this.state;
-    console.log(favoritedList);
     return (
       <span>
         <Header />
@@ -58,19 +57,16 @@ class Album extends React.Component {
           </div>
           <div className="musics">
             {loading && <Loading />}
-            {tracks.map((element) => {
-              const check = favoritedList.some((s) => s.trackId === element.trackId);
-              return (
-                <MusicCard
-                  key={ element.trackId }
-                  trackName={ element.trackName }
-                  previewUrl={ element.previewUrl }
-                  trackId={ element.trackId }
-                  object={ element }
-                  check={ check }
-                />
-              );
-            })}
+            {tracks.map((element) => (
+              <MusicCard
+                key={ element.trackId }
+                trackName={ element.trackName }
+                previewUrl={ element.previewUrl }
+                trackId={ element.trackId }
+                album={ element }
+                favoritedList={ favoritedList }
+              />
+            ))}
           </div>
         </div>
       </span>

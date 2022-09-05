@@ -1,31 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong } from '../services/favoriteSongsAPI';
 
 export default class MusicCard extends React.Component {
   state = {
+    loading: false,
     checked: false,
   };
 
+  componentDidMount() {
+    this.validationMusic();
+  }
+
   handleChange = async () => {
     const { album } = this.props;
-    this.setState({
-      checked: true,
-    });
+    this.setState({ loading: true });
     await addSong(album);
-    this.setState({
-      checked: false,
-    });
+    this.setState({ loading: false, checked: true });
   };
+
+  validationMusic() {
+    const { favoritedList, album } = this.props;
+    const validation = favoritedList.some(({ trackId }) => trackId === album.trackId);
+    console.log(validation);
+    this.setState({ checked: validation });
+  }
 
   render() {
     const {
       trackId, trackName,
-      previewUrl, check,
+      previewUrl,
     } = this.props;
     const {
-      checked,
+      loading, checked,
     } = this.state;
     return (
       <div>
@@ -45,13 +53,12 @@ export default class MusicCard extends React.Component {
             <input
               type="checkbox"
               id="Favorita"
-              onClick={ this.handleChange }
               onChange={ this.handleChange }
               data-testid={ `checkbox-music-${trackId}` }
-              checked={ check }
+              checked={ checked }
             />
           </label>
-          {checked && <Loading />}
+          {loading && <Loading />}
         </div>
       </div>
     );

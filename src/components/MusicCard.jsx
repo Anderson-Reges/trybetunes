@@ -11,26 +11,28 @@ export default class MusicCard extends React.Component {
 
   componentDidMount() {
     this.validationCheckMusic();
+    console.log('didmount');
   }
 
   handleChange = async () => {
     const { album } = this.props;
     const { checked } = this.state;
+    this.setState({ loading: true });
+    await addSong(album);
+    this.setState({ loading: false, checked: true });
     if (checked === true) {
       this.setState({ loading: true });
       await removeSong(album);
       this.setState({ loading: false, checked: false });
     }
-    this.setState({ loading: true });
-    await addSong(album);
-    this.setState({ loading: false, checked: false });
+    console.log('change');
   };
 
   validationCheckMusic() {
     const { favoritedList, album } = this.props;
     const validation = favoritedList.some(({ trackId }) => trackId === album.trackId);
-    console.log(validation);
     this.setState({ checked: validation });
+    console.log('validador');
   }
 
   render() {

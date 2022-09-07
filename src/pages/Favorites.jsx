@@ -25,7 +25,7 @@ class Favorites extends React.Component {
     this.setState({
       musics,
     });
-  }
+  };
 
   handleChange = async () => {
     const { musics } = this.state;

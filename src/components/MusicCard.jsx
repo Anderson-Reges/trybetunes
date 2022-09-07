@@ -15,7 +15,7 @@ export default class MusicCard extends React.Component {
   }
 
   handleChange = async () => {
-    const { album, handleChange } = this.props;
+    const { album, setNewState } = this.props;
     const { checked } = this.state;
     this.setState({ loading: true });
     await addSong(album);
@@ -23,7 +23,7 @@ export default class MusicCard extends React.Component {
     if (checked === true) {
       this.setState({ loading: true });
       await removeSong(album);
-      if (handleChange) await handleChange();
+      if (setNewState) await setNewState();
       this.setState({ loading: false, checked: false });
     }
     // console.log('change');

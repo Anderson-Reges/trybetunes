@@ -20,7 +20,7 @@ class Favorites extends React.Component {
     // console.log('didmount');
   }
 
-  async componentDidUpdate() {
+  setNewState = async () => {
     const musics = await getFavoriteSongs();
     this.setState({
       musics,
@@ -53,6 +53,7 @@ class Favorites extends React.Component {
               album={ element }
               favoritedList={ musics }
               handleChange={ this.handleChange }
+              setNewState={ this.setNewState }
             />))
         )}
       </div>

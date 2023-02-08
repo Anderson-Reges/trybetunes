@@ -22,7 +22,7 @@ Front-end:
 
 ## Instalando Dependências
 
-* Frontend
+> Frontend
 ```bash
 npm install
 ``` 
@@ -30,7 +30,6 @@ npm install
 ## Executando aplicação
 
 * Para rodar o front-end:
-
-  ```
-  npm start
-  ```
+```
+npm start
+```

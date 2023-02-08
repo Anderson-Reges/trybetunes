@@ -34,11 +34,3 @@ npm install
   ```
     cd src/ && npm start
   ```
-
-## Executando Testes
-
-* Para rodar todos os testes:
-
-  ```
-    npm test
-  ```

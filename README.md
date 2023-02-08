@@ -32,5 +32,5 @@ npm install
 * Para rodar o front-end:
 
   ```
-    cd src/ && npm start
+  npm start
   ```

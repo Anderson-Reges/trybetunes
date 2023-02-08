@@ -1,13 +1,44 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Trybetunes
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## 👨‍💻 O que foi ser desenvolvido
+Este projeto trata-se da criação de um site de musicas que consome uma API do Itunes.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Neste projeto foi criado uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação é capaz de:
+
+- Fazer login;
+- Pesquisar por uma banda ou artista;
+- Listar os álbuns disponíveis dessa banda ou artista;
+- Visualizar as músicas de um álbum selecionado;
+- Reproduzir uma prévia das músicas deste álbum;
+- Favoritar e desfavoritar músicas;
+- Ver a lista de músicas favoritas;
+- Ver o perfil da pessoa logada;
+- Editar o perfil da pessoa logada;
+
+## Técnologias usadas
+
+Front-end:
+> Desenvolvido usando: React, React Router, HTML5, ES6
+
+## Instalando Dependências
+
+> Frontend
+```bash
+npm install
+``` 
+
+## Executando aplicação
+
+* Para rodar o front-end:
+
+  ```
+    cd src/ && npm start
+  ```
+
+## Executando Testes
+
+* Para rodar todos os testes:
+
+  ```
+    npm test
+  ```

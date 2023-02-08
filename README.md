@@ -33,4 +33,4 @@ npm install
 ```
 npm start
 ```
-## :warning: por enquanto o projeto encontra-se sem CSS
+## :warning: Por enquanto o projeto encontra-se sem CSS

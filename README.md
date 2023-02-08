@@ -22,7 +22,7 @@ Front-end:
 
 ## Instalando Dependências
 
-> Frontend
+* Frontend
 ```bash
 npm install
 ``` 

@@ -1,0 +1,111 @@
+@import '../../styles/Global.scss';
+
+body {
+  background-image: url('../../../assets/sound-waves.gif');
+  background-position: center;
+  background-size: cover;
+}
+
+.containerLogin {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  .formLogin {
+    padding: 30px;
+    background: transparent;
+    border: 2px white solid;
+    backdrop-filter: blur(13px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25vw;
+    height: 55vh;
+    border-radius: 10px;
+
+    h1 {
+      background: $text-logo;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      background-position: center;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h3 {
+      font-size: 1.3em;
+      font-weight: bolder;
+      color: white;
+    }
+
+    .inputBox {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 22vh;
+      gap: 10px;
+
+      p {
+        position: absolute;
+        top: 30vh;
+        left: 3vw;
+        color: white;
+        font-size: 1em;
+        font-weight: bolder;
+      }
+
+      input {
+        background: transparent;
+        border: none;
+        border-bottom: 2px white solid;
+        outline: none;
+        width: 100%;
+        height: 25px;
+        color: white;
+        font-weight: bolder;
+        font-size: 1em;
+        padding-left: 11px;
+        padding-bottom: 4px;
+      }
+
+      ion-icon {
+        right: 3vw;
+        top: 30vh;
+        position: absolute;
+        color: white;
+        font-size: 1.4em;
+      }
+    }
+
+    .buttonBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        width: 20vw;
+        height: 30px;
+        background: white;
+        transition: all 0.5s ease-out;
+        font-weight: bolder;
+        letter-spacing: 2px;
+        cursor: pointer;
+
+        &:disabled {
+          cursor: auto;
+          border: 1px white solid;
+          color: white;
+          outline: none;
+          background: none;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,9 @@
 @import '../../styles/Global.scss';
 
-body {
+.containerLogin {
   background-image: url('../../../assets/sound-waves.gif');
   background-position: center;
   background-size: cover;
-}
-
-.containerLogin {
   display: flex;
   justify-content: center;
   text-align: center;

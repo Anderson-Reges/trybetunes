@@ -1,0 +1,42 @@
+@import '../../styles/Global.scss';
+
+.containerHome {
+  height: 45vh;
+  background: $text-logo;
+  display: flex;
+  padding: 3em;
+  font-family: 'Golos Text', sans-serif;
+  color: white;
+
+  h2 {
+    font-size: 3em;
+    padding: 1.5em 4em 0px 0px;
+  }
+
+  .buttonBox {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+    text-align: center;
+    padding: 3.4em 8em 0em 0em;
+    gap: 2em;
+
+    input {
+      color: white;
+      border: 0.3em solid white;
+      outline: none;
+      background: transparent;
+      height: 4em;
+      border-radius: 3em;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.75em;
+      transition: all 350ms ease-in-out;
+  
+      &:hover {
+        background: white;
+        color: black;
+      }
+    }
+  }
+}

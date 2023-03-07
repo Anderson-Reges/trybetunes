@@ -1,4 +1,8 @@
-$text-logo: -webkit-linear-gradient(45deg, rgba(0,255,252,1) 14%, rgba(222,0,255,0.8323704481792717) 76%);
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');
+
+$text-logo: -webkit-linear-gradient(45deg, #00ffff, #dd00ff);
+$cyan-color: #00ffff;
+$rose-color: #dd00ff;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -16,6 +20,7 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
+    color: inherit;
     font-size: 100%;
     vertical-align: baseline;
 }

@@ -53,7 +53,6 @@ class Search extends React.Component {
   };
 
   albumCard = (requestUrl) => {
-    // console.log(requestUrl);
     const { prevInputSearch } = this.state;
     if (requestUrl.length === 0) {
       return <p>Nenhum álbum foi encontrado</p>;

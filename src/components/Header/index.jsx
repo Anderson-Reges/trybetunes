@@ -1,39 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../../services/userAPI';
-import Loading from '../Loading';
 import styles from './styles.module.scss';
 
 class Header extends React.Component {
   state = {
-    user: '',
-    loading: false,
+    image: '',
   };
 
   async componentDidMount() {
+    const { image } = await getUser();
     this.setState({
-      loading: true,
-    });
-    const name = await getUser();
-    this.setState({
-      user: name.name, loading: false,
+      image,
     });
   }
 
   render() {
-    const { user, loading } = this.state;
+    const { image } = this.state;
     return (
       <header className={ styles.header }>
-        <h1>TrybeTunes</h1>
-        <div className="nav">
-          <h3
-            data-testid="header-user-name"
-          >
-            { loading ? <Loading /> : <p>{ user }</p>}
-          </h3>
-          <Link to="/search"><p data-testid="link-to-search">Search</p></Link>
-          <Link to="/favorites"><p data-testid="link-to-favorites">Favorites</p></Link>
-          <Link to="/profile"><p data-testid="link-to-profile">Profile</p></Link>
+        <div>
+          <h1 id={ styles.logoBox }>DB Music</h1>
+        </div>
+        <div className={ styles.nav }>
+          <span id={ styles.navBox }>
+            <Link to="/search" id={ styles.navLinkBox }>
+              <ion-icon name="search" id={ styles.navIcons } />
+              Buscar
+            </Link>
+            <Link to="/favorites" id={ styles.navLinkBox }>
+              <ion-icon name="heart" id={ styles.navIcons } />
+              Musicas Curtidas
+            </Link>
+          </span>
+          <Link to="/profile">
+            { image !== ''
+              ? <img src={ image } alt="ImgUser" id={ styles.profilePicture } />
+              : <ion-icon name="person-circle-outline" id={ styles.profileIcon } />}
+          </Link>
         </div>
       </header>
     );

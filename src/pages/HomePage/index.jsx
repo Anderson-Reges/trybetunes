@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import styles from './styles.module.scss';
 
@@ -39,6 +40,7 @@ export default class HomePage extends Component {
             </span>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

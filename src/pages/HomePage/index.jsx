@@ -14,6 +14,31 @@ export default class HomePage extends Component {
             <input type="button" value="Escute previas agora" />
           </div>
         </div>
+        <div className={ styles.containerBody }>
+          <h2>Porque a DB?</h2>
+          <div className={ styles.containerCards }>
+            <span className={ styles.card }>
+              <ion-icon name="server-outline" />
+              <p>
+                Temos o maior banco de dados
+                recheados de diversas musicas e com as mais variadas bandas
+              </p>
+            </span>
+            <span className={ styles.card }>
+              <ion-icon name="heart-half-outline" />
+              <p>
+                Aqui na DB você pode guarda suas musicas
+                favoritas para escutar onde quando quiser
+              </p>
+            </span>
+            <span className={ styles.card }>
+              <ion-icon name="time-outline" />
+              <p>
+                Estamos disponiveis 24h por dia e a alguns cliques de você
+              </p>
+            </span>
+          </div>
+        </div>
       </div>
     );
   }

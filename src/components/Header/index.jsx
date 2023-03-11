@@ -21,9 +21,9 @@ class Header extends React.Component {
     const { image } = this.state;
     return (location && location.pathname ? (
       <header className={ styles.header }>
-        <div>
+        <Link to="/home">
           <h1 id={ styles.logoBox }>DB Music</h1>
-        </div>
+        </Link>
         <nav className={ styles.navHome }>
           <span id={ styles.navBoxHome }>
             <Link to="/about" id={ styles.navLinkBoxHome }>
@@ -38,9 +38,9 @@ class Header extends React.Component {
       </header>)
       : (
         <header className={ styles.header }>
-          <div>
+          <Link to="/home">
             <h1 id={ styles.logoBox }>DB Music</h1>
-          </div>
+          </Link>
           <nav className={ styles.nav }>
             <span id={ styles.navBox }>
               <Link to="/search" id={ styles.navLinkBox }>

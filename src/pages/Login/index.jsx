@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { createUser } from '../../services/userAPI';
 import Loading from '../../components/Loading';
 import styles from './styles.module.scss';
@@ -50,7 +50,11 @@ class Login extends React.Component {
           <div className={ styles.cardLogin }>
             {' '}
             <div className={ styles.formLogin }>
-              <h1>DB Music</h1>
+              <h1>
+                <Link to="/home">
+                  DB Music
+                </Link>
+              </h1>
               <h3>Login</h3>
               <div className={ styles.inputBox }>
                 <p>Usuário</p>

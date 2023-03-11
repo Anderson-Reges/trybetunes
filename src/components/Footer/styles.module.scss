@@ -1,0 +1,18 @@
+@import '../../styles/Global.scss';
+
+.footerContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 4em;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $rose-color;
+    }
+  }
+}

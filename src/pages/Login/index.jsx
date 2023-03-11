@@ -76,7 +76,7 @@ class Login extends React.Component {
               </div>
             </div>
           </div>)}
-        { redirect && <Redirect to="/home" /> }
+        { redirect && <Redirect to="/search" /> }
       </div>
     );
   }

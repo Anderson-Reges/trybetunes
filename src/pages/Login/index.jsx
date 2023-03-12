@@ -51,7 +51,7 @@ class Login extends React.Component {
             {' '}
             <div className={ styles.formLogin }>
               <h1>
-                <Link to="/home">
+                <Link to="/">
                   DB Music
                 </Link>
               </h1>

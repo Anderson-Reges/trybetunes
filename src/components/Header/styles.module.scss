@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 19%;
+  width: 36%;
   color: white;
   font-family: "Golos Text", sans-serif;
   font-weight: 600;
@@ -89,7 +89,7 @@
 
   #navBoxHome {
     display: flex;
-    width: 70%;
+    width: 67%;
     justify-content: space-evenly;
     align-items: center;
     border-right: 2px solid white;
@@ -111,15 +111,33 @@
       color: $rose-color;
     }
   }
+
   #navLinkBoxHome {
     display: flex;
     align-items: center;
-    
 
     #navIconsHome {
       width: 2em;
       height: 2em;
       pointer-events: none;
     }
+  }
+
+  #profilePicture {
+    margin-right: 20px;
+    border-radius: 3em;
+    border: 5px solid white;
+    width: 3.6em;
+    height: 3.6em;
+  }
+
+  #profileIcon {
+    margin-right: 20px;
+    border: 5px solid white;
+    border-radius: 3em;
+    width: 3.6em;
+    height: 3.6em;
+    color: white;
+    pointer-events: none;
   }
 }

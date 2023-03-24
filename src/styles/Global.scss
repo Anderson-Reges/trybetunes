@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');
 
 $text-logo: -webkit-linear-gradient(45deg, #00ffff, #dd00ff);
+$background-color-gradient: linear-gradient(180deg, rgba(49,49,49,1) 3%, rgba(37,37,37,1) 23%, rgba(24,24,24,1) 74%);
 $cyan-color: #00ffff;
 $rose-color: #dd00ff;
 
@@ -32,6 +33,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    background: rgb(62,62,62);
+    background: $background-color-gradient
 }
 ol, ul {
     list-style: none;

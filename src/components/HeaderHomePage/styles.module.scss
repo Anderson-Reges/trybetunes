@@ -2,12 +2,11 @@
 
 .header {
   display: flex;
-  width: 15em;
-  height: 100vh;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0em 0em 0em 5em;
+  align-items: center;
   background: black;
-  flex-direction: column;
+  height: 15vh;
 
   #logoBox {
     display: flex;
@@ -17,68 +16,8 @@
     background-clip: text;
     font-size: 2em;
     -webkit-text-fill-color: transparent;
-    padding: 0.8em 0em 0em 0.8em;
   }
 
-  .nav {
-    height: 40vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: "Golos Text", sans-serif;
-    font-weight: 600;
-    gap: 2em;
-    flex-direction: column;
-
-    #navBox {
-      display: flex;
-      justify-content: space-evenly;
-      height: 7em;
-      flex-direction: column;
-      padding: 0em 2em 0em 0em;
-
-      a {
-        text-decoration: none;
-
-        &:hover {
-          color: $rose-color;
-        }
-      }
-
-    }
-
-    #navLinkBox {
-      display: flex;
-      align-items: center;
-      font-size: 0.9em;
-
-      #navIcons {
-        width: 2em;
-        height: 2em;
-        pointer-events: none;
-        padding: 0em 0.7em 0em 0em;
-      }
-    }
-
-    #profilePicture {
-      margin-right: 20px;
-      border-radius: 3em;
-      border: 5px solid white;
-      width: 3.6em;
-      height: 3.6em;
-    }
-
-    #profileIcon {
-      border: 5px solid white;
-      border-radius: 3em;
-      width: 3.6em;
-      height: 3.6em;
-      color: white;
-      pointer-events: none;
-    }
-  }
 }
 
 .navHome {
@@ -120,6 +59,7 @@
   #navLinkBoxHome {
     display: flex;
     align-items: center;
+    padding: 0em 3em 0em 0em;
 
     #navIconsHome {
       width: 2em;
@@ -129,7 +69,6 @@
   }
 
   #profilePicture {
-    margin-right: 20px;
     border-radius: 3em;
     border: 5px solid white;
     width: 3.6em;

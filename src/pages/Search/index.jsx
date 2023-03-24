@@ -91,7 +91,7 @@ class Search extends React.Component {
       </div>);
 
     return (loading ? <Loading /> : (
-      <div data-testid="page-search">
+      <div className={ styles.pageSearch }>
         <Header />
         <div className="input-search-tags-page">
           <h3>Search</h3>

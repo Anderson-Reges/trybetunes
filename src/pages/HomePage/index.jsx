@@ -2,15 +2,15 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
-import Header from '../../components/Header';
+import HeaderHomePage from '../../components/HeaderHomePage';
 import styles from './styles.module.scss';
 
 export default class HomePage extends Component {
   render() {
     const { location } = this.props;
     return (
-      <div>
-        <Header location={ location } />
+      <div className={ styles.page }>
+        <HeaderHomePage location={ location } />
         <div className={ styles.containerHome }>
           <h2>Aqui na DB você tem um banco de dados inteiro de musicas!!!</h2>
           <div className={ styles.buttonBox }>

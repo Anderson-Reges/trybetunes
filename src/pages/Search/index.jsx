@@ -13,7 +13,15 @@ class Search extends React.Component {
     loading: false,
     hasRender: false,
     requestUrl: '',
+    image: '',
   };
+
+  async componentDidUpdate() {
+    const { image } = await getUser();
+    this.setState({
+      image,
+    });
+  }
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -65,26 +73,31 @@ class Search extends React.Component {
             {' '}
             { prevInputSearch }
           </h4>
-          ;
-          {requestUrl.map((element) => (
-            <Link
-              data-testid={ `link-to-album-${element.collectionId}` }
-              to={ `./album/${element.collectionId}` }
-              key={ element.collectionId }
-            >
-              <img
-                alt={ element.collectionName }
-                src={ element.artworkUrl100 }
-              />
-              <h4>{element.collectionName}</h4>
-              <p>{element.artistName}</p>
-            </Link>))}
+          <div className={ styles.searchContainer }>
+            <input type="button" value="<" />
+            <div className={ styles.albumContainer }>
+              {requestUrl.map((element) => (
+                <Link
+                  data-testid={ `link-to-album-${element.collectionId}` }
+                  to={ `./album/${element.collectionId}` }
+                  key={ element.collectionId }
+                >
+                  <img
+                    alt={ element.collectionName }
+                    src={ element.artworkUrl100 }
+                  />
+                  <h4>{element.collectionName}</h4>
+                  <p>{element.artistName}</p>
+                </Link>))}
+            </div>
+            <input type="button" value=">" />
+          </div>
         </div>);
     }
   };
 
   render() {
-    const { disabled, inputSearch, loading, hasRender, requestUrl } = this.state;
+    const { disabled, inputSearch, loading, hasRender, requestUrl, image } = this.state;
     const albums = (
       <div className={ styles.albums }>
         {this.albumCard(requestUrl)}
@@ -93,8 +106,7 @@ class Search extends React.Component {
     return (loading ? <Loading /> : (
       <div className={ styles.pageSearch }>
         <Header />
-        <div className="input-search-tags-page">
-          <h3>Search</h3>
+        <div className={ styles.inputHeader }>
           <input
             type="text"
             name="inputSearch"
@@ -110,6 +122,11 @@ class Search extends React.Component {
           >
             Pesquisar
           </button>
+          <Link to="/profile">
+            { image !== ''
+              ? <img src={ image } alt="ImgUser" id={ styles.profilePicture } />
+              : <ion-icon name="person-circle-outline" id={ styles.profileIcon } />}
+          </Link>
         </div>
         {hasRender && albums}
       </div>

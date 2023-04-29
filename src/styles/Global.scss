@@ -7,9 +7,9 @@ $rose-color: #dd00ff;
 
 body {
     line-height: 1;
-    height: 100vh;
-    background: rgb(62,62,62);
-    background: $background-color-gradient
+    background: $background-color-gradient;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 html, body, div, span, applet, object, iframe,

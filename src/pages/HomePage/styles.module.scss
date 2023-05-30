@@ -1,0 +1,97 @@
+@import '../../styles/Global.scss';
+
+.page {
+  background: white;
+}
+
+.containerHome {
+  height: 45vh;
+  background: $text-logo;
+  display: flex;
+  padding: 3em;
+  font-family: 'Golos Text', sans-serif;
+  color: white;
+
+  h2 {
+    font-size: 3em;
+    padding: 1.5em 4em 0px 0px;
+  }
+
+  .buttonBox {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+    text-align: center;
+    padding: 3.4em 5.5em 0em 0em;
+    gap: 2em;
+
+    a {
+      input {
+        color: white;
+        border: 0.3em solid white;
+        outline: none;
+        background: transparent;
+        height: 4em;
+        width: 18em;
+        border-radius: 3em;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.75em;
+        transition: all 350ms ease-in-out;
+  
+        &:hover {
+          background: white;
+          color: black;
+        }
+      }
+    }
+    
+  }
+}
+
+.containerBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+  font-family: 'Golos Text', sans-serif;
+  margin-bottom: 4em;
+
+
+  h2 {
+    font-size: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .containerCards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5em;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0em 0em 1em -7px black;
+      border-radius: 1em;
+      height: 50vh;
+      width: 20vw;
+      padding: 1em;
+
+      ion-icon {
+        background: $text-logo;
+        border-radius: 0.2em 0.2em 0em 0em;
+        border: 1px solid black;
+        width: 100%;
+        font-size: 5em;
+        height: 2em;
+        pointer-events: none;
+      }
+    }
+  }
+}
